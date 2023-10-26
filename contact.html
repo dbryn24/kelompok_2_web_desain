@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+        <style>
+            .header{
+                font-family: 'Montserrat', sans-serif;
+                width: auto;
+                height: 100px;
+                background-color: #202020;
+            }
+            .logo{
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                height: 70;
+            }
+            .unklab{
+                position: absolute;
+                left: 100px;
+                top: 20px;
+                font-size: 30px;
+                color: white;
+            }
+            .head1{
+                position: absolute;
+                top: 44px;
+                right: 20px;
+                
+            }
+            .head1 a {
+                color: white;
+                font-size: 20;
+                margin: 8;
+                text-decoration: none;
+            }
+            body{
+              background: #ffffff;
+            }  
+            .contact-box {
+              background: #f8f0e5;
+              display: flex;
+              position:relative;
+              top: 100;
+            }
+            .contact-left {
+              flex-basis: 60%;
+              padding: 40px 120px;
+            }
+            .contact-right {
+              flex-basis: 60%;
+              padding: 40px 1px;
+              background: #ffffff;
+              color: #202020;
+            }
+            .h1{
+              margin-bottom: 100%;
+            }
+            .input-row{
+              display:flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+            }
+            .input-row .input-group{
+              flex-basis: 45%;
+            }
+            input{
+              width: 100%;
+              border: none;
+              border-bottom: 1px solid #d6d6d6;
+              outline: none;
+              padding-bottom: 5px;
+            }
+            textarea{
+              width: 100%;
+              border: 1px solid #d6d6d6;
+              outline: none;
+              padding: 10px;
+              box-sizing: border-box;
+            }
+            label{
+              margin-bottom: 6px;
+              display: block;
+              color: #202020
+            }
+            button{
+              background: #333533;
+              width: 100px;
+              border: none;
+              outline: none;
+              color:#d6d6d6;
+              height: 35px;
+              border-radius: 30px;
+              margin-top: 20px;
+              box-shadow: 0px 5px 15px 0px rgba(253, 237, 191, 0.3);
+            }
+            .contact-left h3{
+              color:#202020;
+              font-weight: 600;
+              margin-bottom: 0px;
+            }
+            .contact-right h3{
+              font-weight: 600;
+              margin-bottom: 30px;
+            }
+            .contact-left h4{
+              color:#202020;
+              font-weight: 500;
+              margin-top: 1px;
+              margin-bottom: 30px;
+            }
+            tr td:first-child{
+              padding-right: 20px;
+            }
+            tr td{
+              padding-top: 20px
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/LOGO_UNIVERSITAS_KLABAT.png/478px-LOGO_UNIVERSITAS_KLABAT.png" class="logo">
+          <a class="unklab">KLABAT<br>UNIVERSITY</a>
+            <div class="head1">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Contact</a>
+                <a href="">Log Out</a>
+            </div>
+            
+            <div class="contact-box">
+              <div class="contact-left">
+                <h3>Sent your request</h3>
+                <h4>We would love to respond to your quories and helps you.<br>
+                Feel free to get in touch with us</h4>
+                <form>
+
+                  <div class="input-row">
+                    <div class="input-group">
+                      <label>Name</label>
+                      <input type="text" placeholder="Full Name">
+                    </div>
+                    <div class="input-group">
+                      <label>Phone</label>
+                      <input type="text" placeholder="+62431 891036">
+                    </div>
+
+                  </div>
+                  <div class="input-row">
+                    <div class="input-group">
+                      <label>Email </label>
+                      <input type="email" placeholder="info@unklab.ac.id">
+                    </div>
+                    <div class="input-group">
+                      <label>NIM</label>
+                      <input type="text" placeholder="105000000000">
+                    </div>
+
+                  </div>
+
+                  <label>Message</label>
+                  <textarea rows="5" placeholder="Your Message"></textarea>
+
+                  <button type="submit">SEND</button>
+
+                </form>
+
+              </div>
+              <div class="contact-right">
+                <h3>Reach Us</h3>
+
+                <table>
+                  <tr>
+                    <td>Email</td>
+                    <td>info@unklab.ac.id</td>
+                  </tr>
+                  <tr>
+                    <tr>
+                      <td>Phone</td>
+                      <td>+62 431 891 036</td>
+                    </tr>
+                    <td>Address</td>
+                    <td>Jl. Arnold Mononutu, Airmadidi Bawah,<br> 
+                      Kec. Airmadidi, Kabupaten Minahasa Utara,<br> 
+                      Sulawesi Utara 95371</td>
+                  </tr>
+
+                </table>
+              </div>
+
+            </div>
+            
+        </div>
+    </body>
+</html>
