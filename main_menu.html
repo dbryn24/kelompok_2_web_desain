@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Menu</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -8,189 +10,371 @@
       rel="stylesheet"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
     />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-      crossorigin="anonymous"
-    ></script>
+
+    <title>Home</title>
 
     <style>
-      .header {
-        font-family: "Montserrat", sans-serif;
-        width: auto;
-        height: 100px;
-        background-color: #202020;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        height: 70;
-      }
-      .unklab {
-        text-decoration: none;
-        position: absolute;
-        left: 100px;
-        top: 20px;
-        font-size: 30px;
-        color: white;
-      }
-      .head1 {
-        position: absolute;
-        top: 44px;
-        right: 20px;
-      }
-      .head1 a {
-        text-decoration: none;
-        color: white;
-        font-size: 20;
-        margin: 8;
-      }
+
       body {
-        font-family: "Montserrat", sans-serif;
-        background-color: #8ecae6;
+        min-height: 100vh;
+        background: url(https://www.unklab.ac.id/wp-content/uploads/2022/11/20200209_152248-1024x768.jpg);
+        background-size: cover;
+        background-position: center;
       }
+
+      .header img {
+        height: 70px;
+      }
+
+      .header span {
+        position: absolute;
+        font-size: 25px;
+        color: #fff;
+        top: 25%;
+        left: 18%;
+      }
+
+      .header p {
+        position: absolute;
+        font-size: 25px;
+        color: #fff;
+        top: 45%;
+        left: 18%;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.3rem 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        z-index: -2;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .header:hover::after {
+        left: 100%;
+      }
+
+      .logo {
+        font-size: 2rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .navbar a {
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 2.5rem;
+      }
+
+      .navbar a:hover {
+        background: #f8f0e5;
+        border: 2px solid black;
+        padding: 5px 15px;
+        color: black;
+      }
+
+      #check {
+        display: none;
+      }
+
+      .icons {
+        right: 5%;
+        position: absolute;
+        font-size: 2.8rem;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+      }
+
       .profil {
         position: absolute;
-        left: 50;
-        top: 60;
-        height: 750px;
-        width: 880px;
+        left: 10%;
+        top: 25%;
+        height: 600px;
+        width: 600px;
         border-radius: 5%;
         border-width: 2px;
         border-style: solid;
         border-color: silver;
         background-color: white;
         box-shadow: 8px 8px 5px gray;
+        /* z-index: 1; */
+      }
+
+      .profil img {
+        height: 400px;
+        width: 400px;
+      }
+
+      .absen img {
+        height: 400px;
+        width: 400px;
       }
       .pp {
         position: absolute;
-        top: 60;
-        left: 250;
-        width: 350px;
-        height: 450px;
+        top: 5%;
+        left: 17%;
+        width: 150px;
+        height: 150px;
       }
       .nama {
         position: absolute;
-        top: 500;
-        left: 166;
-        font-size: 60;
+        top: 73%;
+        left: 22%;
+        font-size: 3rem;
       }
       .poin {
         position: absolute;
-        top: 600px;
-        left: 320px;
-        font-size: 40px;
+        top: 82%;
+        left: 28%;
+        font-size: 4rem;
       }
       .absen {
         position: absolute;
-        right: 50;
-        top: 60;
-        height: 750px;
-        width: 880px;
+        right: 10%;
+        top: 25%;
+        height: 600px;
+        width: 600px;
         border-radius: 5%;
         border-width: 2px;
         border-style: solid;
         border-color: silver;
         background-color: white;
         box-shadow: 8px 8px 5px gray;
+        /* z-index: 1; */
       }
       .qr {
-        height: 400;
         position: absolute;
-        left: 240;
-        top: 50;
+        top: 5%;
+        left: 17%;
+        width: 150px;
+        height: 150px;
       }
       .ambil {
         position: absolute;
-        top: 500;
-        left: 240;
-        font-size: 60;
+        top: 75%;
+        left: 22%;
+        font-size: 4rem;
       }
 
-      .c-item {
-        height: 860px;
+      @-webkit-keyframes scroll {
+        0% {
+          transform: translate(0);
+        }
+        100% {
+          transform: translateX(calc(-250px * 7));
+        }
       }
 
-      .c-img {
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.6);
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-250px * 7));
+        }
       }
-      .carousel-indicators{
-        visibility: hidden;
+
+      @media (max-width: 850px) {
+        .header {
+          padding: 1.3rem 5%;
+        }
+
+        .header img {
+          height: 60px;
+        }
+
+        .header span {
+          display: none;
+        }
+
+        .header p {
+          display: none;
+        }
+
+        .icons {
+          display: inline-flex;
+        }
+
+        #check:checked ~ .icons #menu-icon {
+          display: none;
+        }
+
+        .icons #close-icon {
+          display: none;
+        }
+
+        #check:checked ~ .icons #close-icon {
+          display: block;
+        }
+
+        .navbar {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background: rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(20px);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          transition: 0.3s ease;
+          overflow: hidden;
+        }
+
+        #check:checked ~ .navbar {
+          height: 17.7rem;
+        }
+
+        .navbar a {
+          display: block;
+          font-size: 1.7rem;
+          margin: 2rem 0;
+          text-align: center;
+          transform: translateY(-50px);
+          opacity: 0;
+          transition: 0.3s ease;
+        }
+
+        #check:checked ~ .navbar a {
+          transform: translateY(0);
+          opacity: 1;
+          transition-delay: calc(0.15s * var(--i));
+        }
+
+        .profil img {
+          height: 75px;
+          width: 75px;
+        }
+
+        .absen img {
+          height: 75px;
+          width: 75px;
+        }
+
+        .profil {
+          left: 10%;
+          position: absolute;
+          height: 140px;
+          width: 140px;
+        }
+
+        .pp {
+          position: absolute;
+          left: 22%;
+          top: 5%;
+          width: 80px;
+          height: 80px;
+        }
+        .nama {
+          position: absolute;
+          top: 64%;
+          left: 15%;
+          font-size: 13px;
+        }
+        .poin {
+          position: absolute;
+          top: 75%;
+          left: 20%;
+          font-size: 20px;
+        }
+
+        .absen {
+          position: absolute;
+          right: 10%;
+          height: 140px;
+          width: 140px;
+          max-width: 550px;
+        }
+
+        .qr {
+          position: absolute;
+          top: 5%;
+          left: 22%;
+          height: 80px;
+          width: 80px;
+        }
+        .ambil {
+          position: absolute;
+          top: 62%;
+          left: 30%;
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 530px) {
+        .icons {
+          display: block;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="header">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/LOGO_UNIVERSITAS_KLABAT.png/478px-LOGO_UNIVERSITAS_KLABAT.png"
-        class="logo"
-      />
-      <div class="head1">
-        <a href="main_menu.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="./Form LoRe/form.html">Log Out</a>
+    <header class="header">
+      <a href="#" class="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/LOGO_UNIVERSITAS_KLABAT.png/478px-LOGO_UNIVERSITAS_KLABAT.png"
+          alt=""
+        />
+      </a>
+      <span>Klabat </span>
+      <p>University</p>
+
+      <input type="checkbox" id="check" />
+      <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+      </label>
+
+      <div class="navbar">
+        <a href="main_menu.html" style="--i: 0">Home</a>
+        <a href="about.html" style="--i: 1">About</a>
+        <a href="contact.html" style="--i: 2">Contact</a>
+        <a href="./Form LoRe/form.html" style="--i: 3">Log Out</a>
       </div>
-    </div>
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#hero-carousel"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#hero-carousel"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#hero-carousel"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active c-item">
-          <img
-            src="https://ejournal.unklab.ac.id/images/unklab1.jpg"
-            class="d-block w-100 c-img"
-            alt="Slide 1"
-          />
-        </div>
-        <div class="carousel-item c-item">
-          <img
-            src="https://www.unklab.ac.id/wp-content/uploads/2022/11/20200209_152248-1024x768.jpg"
-            class="d-block w-100 c-img"
-            alt="Slide 2"
-          />
-          <div class="carousel-caption top-0 mt-4">
-          </div>
-        </div>
-        <div class="carousel-item c-item">
-          <img
-            src="https://i.ytimg.com/vi/86Hqra5MXMc/maxresdefault.jpg"
-            class="d-block w-100 c-img"
-            alt="Slide 3"
-          />
-          <div class="carousel-caption top-0 mt-4">
-        </div>
-      </div>
-    </div>
+    </header>
     <div class="body">
       <div class="profil">
         <img
