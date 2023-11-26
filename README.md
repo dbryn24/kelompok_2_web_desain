@@ -1,4 +1,4 @@
-# kelompok_2_web_desain
+# kelompok_6_web_desain
 
 Repu,francesco.
 Korah, Glean.
