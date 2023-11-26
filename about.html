@@ -1,174 +1,628 @@
-<html>
-    <head>
-        <title>About</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
-        <style>
-            .header {
-        font-family: "Montserrat", sans-serif;
-        width: auto;
-        height: 100px;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+ 
+    <title>About</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        background: url(https://www.unklab.ac.id/wp-content/uploads/2022/11/20200209_152248-1024x768.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .header img {
+        height: 70px;
+      }
+
+      .header span {
+        position: absolute;
+        font-size: 25px;
+        color: #fff;
+        top: 25%;
+        left: 18%;
+      }
+
+      .header p {
+        position: absolute;
+        font-size: 25px;
+        color: #fff;
+        top: 45%;
+        left: 18%;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.3rem 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        z-index: -2;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .header:hover::after {
+        left: 100%;
+      }
+
+      .logo {
+        font-size: 2rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .navbar a {
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 2.5rem;
+      }
+
+      .navbar a:hover {
+        background: #f8f0e5;
+        border: 2px solid black;
+        padding: 5px 15px;
+        color: black;
+      }
+
+      #check {
+        display: none;
+      }
+
+      .icons {
+        right: 5%;
+        position: absolute;
+        font-size: 2.8rem;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+      }
+
+      .container-a {
+        position: absolute;
+        left: 2%;
+        top: 15%;
+        height: 300px;
+        width: 900px;
+        border-radius: 5%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: silver;
+        background-color: white;
+        box-shadow: 8px 8px 5px gray;
+      }
+
+      .container-b {
+        position: absolute;
+        right: 2%;
+        top: 15%;
+        height: 300px;
+        width: 900px;
+        border-radius: 5%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: silver;
+        background-color: white;
+        box-shadow: 8px 8px 5px gray;
+      }          
+      
+      .left-box {
+        text-align: justify;
+        padding: 3%;
+        font-size: 20px;
+      }
+
+      .left-box h3 {
+        text-align: center;
+        font-size: 35px;
+      }
+
+      .left-box p {
+        font-size: 25px;
+      }
+
+      .right-box {
+        text-align: justify;
+        padding: 3%;
+        font-size: 20px;
+      }
+
+      .right-box h3 {
+        text-align: center;
+        font-size: 35px;
+      }
+
+      .right-box p {
+        font-size: 25px;
+      }
+
+      .new-container {
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        display: flex;
+        padding: 25px 120px 25px;
+        background-color:  #F8F0E5;
+        text-align: center;
+        width: 100%;
+        bottom: 5%;
+        
+      }
+
+      .new-container h3 {
+        font-size: 30px;
+      }
+
+      .new-container p {
+        font-size: 25px;
+      }
+
+      .leftbox p {
+        font-size: 25px;
+      }
+
+
+      .group-container {
+        bottom: 0;
+        position: absolute;
+        padding: 5px;
+        color: white;
+        font-size: 16px;
+        width: 100%;
+        height: 5%;
         background-color: #202020;
       }
-      .logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        height: 70;
+
+     .group-container p {
+      text-align: center;
+      font-size: 30px;
+     }
+
+
+      @-webkit-keyframes scroll {
+        0% {
+          transform: translate(0);
+        }
+        100% {
+          transform: translateX(calc(-250px * 7));
+        }
       }
-      .unklab {
-        text-decoration: none;
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-250px * 7));
+        }
+      }
+
+      @media (max-width: 1440px) {
+        .container-a {
         position: absolute;
-        left: 100px;
-        top: 20px;
+        left: 2%;
+        top: 20%;
+        height: 300px;
+        width: 650px;
+        border-radius: 5%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: silver;
+        background-color: white;
+        box-shadow: 8px 8px 5px gray;
+      }
+
+      .container-b {
+        position: absolute;
+        right: 2%;
+        top: 20%;
+        height: 300px;
+        width: 650px;
+        border-radius: 5%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: silver;
+        background-color: white;
+        box-shadow: 8px 8px 5px gray;
+      }          
+      
+      .left-box {
+        text-align: justify;
+        padding: 3%;
+        font-size: 20px;
+      }
+
+      .left-box h3 {
+        text-align: center;
         font-size: 30px;
-        color: white;
       }
-      .head1 {
+
+      .left-box p {
+        font-size: 25px;
+      }
+
+      .right-box {
+        text-align: justify;
+        padding: 3%;
+        font-size: 20px;
+      }
+
+      .right-box h3 {
+        text-align: center;
+        font-size: 30px;
+      }
+
+      .right-box p {
+        font-size: 25px;
+      }
+
+      .new-container {
+        padding: 25px 150px 25px;
         position: absolute;
-        top: 44px;
-        right: 20px;
+        display: flex;
+        padding: 5px;
+        background-color:  #F8F0E5;
+        border-top: 1px solid black;
+        text-align: center;
+        width: 100%;
+        bottom: 5%;
       }
-      .head1 a {
-        text-decoration: none;
+
+      .new-box {
+        flex: 1;
+        padding: 1%;
+        margin: 10px;
+        background-color: transparent;
+        font-size: 24px;
+      }
+
+      .new-box h3 {
+        font-size: 30px;
+      }
+
+      .new-box p {
+        font-size: 25px;
+        
+      }
+
+
+      .group-container {
+        bottom: 0;
+        position: absolute;
+        padding: 5px;
+        background-color: #202020;
         color: white;
-        font-size: 20;
-        margin: 8;
+        font-size: 16px;
+        width: 100%;
+        height: 5%;
       }
-            
-            .container {
-                display: flex;
-                padding: 30px;
-                background-color: white;
-            }
-            .box {
-                flex: 1;
-                padding: 20px;
-                border: 1px solid #ccc;
-                margin: 10px;
-                background-color: #fff;
-                box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
-                border-radius: 8px;
-            }
-            .left-box {
-                background-color: white;
-                text-align: left;
-                
 
-            }
-            .right-box {
-                background-color: white;
-                text-align: left;
+     .group-container p {
+      text-align: center;
+      font-size: 30px;
+     }
+      }
 
-            }    
+      @media (max-width: 850px) {
+        .header {
+          padding: 1.3rem 5%;
+        }
+
+        .header img {
+          height: 60px;
+        }
+
+        .header span {
+          display: none;
+        }
+
+        .header p {
+          display: none;
+        }
+
+        .icons {
+          display: inline-flex;
+        }
+
+        #check:checked ~ .icons #menu-icon {
+          display: none;
+        }
+
+        .icons #close-icon {
+          display: none;
+        }
+
+        #check:checked ~ .icons #close-icon {
+          display: block;
+        }
+
+        .navbar {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background: rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(20px);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          transition: 0.3s ease;
+          overflow: hidden;
+        }
+
+        #check:checked ~ .navbar {
+          height: 17.7rem;
+        }
+
+        .navbar a {
+          display: block;
+          font-size: 1.7rem;
+          margin: 2rem 0;
+          text-align: center;
+          transform: translateY(-50px);
+          opacity: 0;
+          transition: 0.3s ease;
+        }
+
+        #check:checked ~ .navbar a {
+          transform: translateY(0);
+          opacity: 1;
+          transition-delay: calc(0.15s * var(--i));
+        }
+
+        .container-a {
+        position: absolute;
+        top: 20%;
+        height: 320px;
+        width: 350px;
+        border-radius: 5%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: silver;
+        background-color: white;
+        box-shadow: 8px 8px 5px gray;
+        left: 5%;
+      }
+
+      .container-b {
+        position: absolute;
+        left: 5%;
+        top: 73%;
+        height: 370px;
+        width: 350px;
+        border-radius: 5%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: silver;
+        background-color: white;
+        box-shadow: 8px 8px 5px gray;
+      }          
+      
+      .left-box {
+        text-align: justify;
+        padding: 3%;
+        font-size: 20px;
+      }
+
+      .left-box h3 {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .left-box p {
+        font-size: 20px;
+      }
+
+      .right-box {
+        text-align: justify;
+        padding: 3%;
+        font-size: 20px;
+      }
+
+      .right-box h3 {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .right-box p {
+        font-size: 20px;
+      }
+
+      .new-container {
+        background-color:  #F8F0E5;
+        text-align: center;
+        width: 100%;
+        height: 28%;
+        top: 132%;
+      }
+
+      .new-container h3 {
+        font-size: 17px;
+      }
+
+      .new-container p {
+        font-size: 10px;
+        
+      }
+
+      .leftbox {
+        top: 10%;
+        position: absolute;
+        left: 5%;
+        width: 100px;
+      }
+
+      .centerbox {
+        top: 10%;
+        position: absolute;
+        left: 35%;
+        width: 100px;
+        /* background-color: #fff; */
+      }
+
+      .rightbox {
+        right: 5%;
+        top: 10%;
+        position: absolute;
+      }
+
+      .rightbox iframe {
+        height: 100px;
+        width: 100px;
+      }
 
 
-            .new-container {
-            display: flex;
-            padding: 5px;
-            background-color:  #F8F0E5;
-            border-top: 1px solid black;
-            text-align: center;
+      .group-container {
+        top: 160%;
+        position: absolute;
+        padding: 5px;
+        background-color: #202020;
+        color: white;
+        font-size: 16px;
+        width: 100%;
+        height: 5%;
+        
+      }
 
-            }
+     .group-container p {
+      text-align: center;
+      font-size: 20px;
+     }
 
-            .new-box {
-                flex: 1;
-                padding: 2px;
-                margin: 10px;
-                background-color: transparent;
-            }
+    }
 
-            .new-left-box {
-                text-align: center;
-            }
-
-            .new-center-box {
-                text-align: center;
-            }
-
-            .new-right-box {
-                text-align: center;
-            }
+      @media (max-width: 530px) {
+        .icons {
+          display: block;
+        }
+      }
 
 
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/LOGO_UNIVERSITAS_KLABAT.png/478px-LOGO_UNIVERSITAS_KLABAT.png"
+          alt=""
+        />
+      </a>
+      <span>Klabat </span>
+      <p>University</p>
 
-            .group-container {
-                text-align: center;
-                padding: 5px;
-                background-color: #202020;
-                color: white;
-                font-size: 16px;
-                }
+      <input type="checkbox" id="check" />
+      <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+      </label>
 
-            .group-text {
-                margin: 0;
-            }
-
-
-
-
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/LOGO_UNIVERSITAS_KLABAT.png/478px-LOGO_UNIVERSITAS_KLABAT.png" class="logo">
-            <a class="unklab">KLABAT<br>UNIVERSITY</a>
-            <div class="head1">
-        <a href="main_menu.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="./Form LoRe/form.html">Log Out</a>
+      <div class="navbar">
+        <a href="main_menu.html" style="--i: 0">Home</a>
+        <a href="about.html" style="--i: 1">About</a>
+        <a href="contact.html" style="--i: 2">Contact</a>
+        <a href="./Form LoRe/form.html" style="--i: 3">Log Out</a>
       </div>
-          </div>
+    </header>
 
-
-          <div class="container">
-            <div class="box left-box">
-                <h3>Kenapa kami membuat WEBSITE ini?</h3>
-                <p>Alasan kami membuat website ini adalah karena pada saat ini sistem tersebut tidak efisiensi waktu</p>
-                <p>Dan banyaknya tindakan kecurangan yang dilakukan Mahasiswa outsider </p>
-                <p>Maupun kelalayan para petugas absensi </p>
-            </div>
-            <div class="box right-box">
-                <h3>Apa saja yang ada dalam WEBSITE ini?</h3>
-                <p>Di dalam halaman website ini Mahasiswa dapat melakukan Absensi sabat </p>
-                <p>Tidak hanya melakukan Absensi sabat para Mahasiswa juga bisa melihat poin yang mereka peroleh </p>
-                <p>Poin poin tersebut diperoleh dari pelanggaran terhadap peraturan yang Mahasiswa lakukan</p>
-            </div>
+    <div class="container">
+      <div class="container-a">
+        <div class="box left-box">
+            <h3>Kenapa kami membuat WEBSITE ini?</h3>
+            <br>
+            <p>&#9758;Alasan kami membuat website ini adalah karena pada saat ini sistem tersebut tidak efisiensi waktu </p>
+            <p>&#9758;Dan banyaknya tindakan kecurangan yang dilakukan Mahasiswa outsider </p>
+            <p>&#9758;Maupun kelalayan para petugas absensi </p>
         </div>
-
-        <div class="new-container">
-            <div class="new-box new-left-box">
-                <h3>Credit</h3>
-                <p>Dave Mongkau</p>
-                <p>Glean Korah</p>
-                <p>Francesco Repu</p>
-                <p>Andika Pujianto</p>
-                <p>Sergio Poli</p>
-
-            </div>
-            <div class="new-box new-center-box">
-                <h3>Alamat Universitas Klabat</h3>
-                <p>Jl. Arnold Mononutu, Airmadidi Bawah</p>
-                <p>Kec. Airmadidi, Kabupaten Minahasa Utara, Sulawesi Utara</p>
-                <p> 95371</p>
-            </div>
-            <div class="new-box new-right-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.597345140157!2d124.98139947333532!3d1.4175081613580418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870a95df6309dd%3A0x21d86e4847556add!2sUniversitas%20Klabat!5e0!3m2!1sid!2sid!4v1698292410627!5m2!1sid!2sid" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    </div>
+    <div class="container-b">
+        <div class="box right-box">
+          <h3>Apa saja yang ada dalam WEBSITE ini?</h3>
+          <br>
+          <p>&#9758;Di dalam halaman website ini Mahasiswa dapat melakukan Absensi sabat </p>
+          <p>&#9758;Tidak hanya melakukan Absensi sabat para Mahasiswa juga bisa melihat poin yang mereka peroleh </p>
+          <p>&#9758;Poin-poin tersebut diperoleh dari pelanggaran terhadap peraturan yang Mahasiswa lakukan</p>
         </div>
+    </div>
+    </div>
 
-        <div class="group-container">
-            <p class="group-text">2023 Web Design - E, Group 2</p>
+    <div class="new-container">
+        <div class="box leftbox">
+            <h3>Credit</h3>
+            <br>
+            <p>Dave Mongkau</p>
+            <p>Glean Korah</p>
+            <p>Francesco Repu</p>
+            <p>Andika Pujianto</p>
+            <p>Sergio Poli</p>
+
         </div>
-    
+        <div class="box centerbox">
+            <h3>Alamat Universitas Klabat</h3>
+            <br>
+            <p>Jl. Arnold Mononutu, Airmadidi Bawah</p>
+            <p>Kec. Airmadidi, Kabupaten Minahasa Utara, </p>
+            <p>Sulawesi Utara 95371</p>
         </div>
+        <div class="box rightbox">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.597345140157!2d124.98139947333532!3d1.4175081613580418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870a95df6309dd%3A0x21d86e4847556add!2sUniversitas%20Klabat!5e0!3m2!1sid!2sid!4v1698292410627!5m2!1sid!2sid" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
 
+    <div class="group-container">
+        <p>&copy; 2023 Web Design - E, Group 6</p>
+    </div>
 
-          
-
-
-    </body>
+    </div>
+  </body>
 </html>
